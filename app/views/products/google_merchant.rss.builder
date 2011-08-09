@@ -12,7 +12,7 @@ xml.rss "version" => "2.0", "xmlns:g" => "http://base.google.com/ns/1.0" do
       xml.item do
         xml.id product.id.to_s
         xml.title product.name
-        xml.description CGI.escapeHTML(product.description)
+        xml.description CGI.escapeHTML(product.description) if product.description
         xml.link production_domain + 'products/' + product.permalink
         xml.tag! "g:mpn", product.sku.to_s
         xml.tag! "g:id", product.id.to_s
