@@ -11,7 +11,7 @@ xml.rss "version" => "2.0", "xmlns:g" => "http://base.google.com/ns/1.0" do
     @products.each do |product|
       xml.item do
         xml.id product.id.to_s
-        xml.title product.name
+        xml.title product.name.capitalize
         xml.description CGI.escapeHTML(product.description) if product.description
         xml.link production_domain + 'products/' + product.permalink
         xml.tag! "g:mpn", product.sku.to_s
