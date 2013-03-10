@@ -23,7 +23,7 @@ xml.rss "version" => "2.0", "xmlns:g" => "http://base.google.com/ns/1.0" do
         xml.description CGI.escapeHTML(product.description) if product.description
         xml.link production_domain + 'products/' + product.permalink
         xml.tag! "g:mpn", product.sku.to_s
-        xml.tag! "g:availability", product.visible? ? "disponibile" : "non-disponibile"
+        xml.tag! "g:availability", product.visible? ? "in stock" : "out of stock"
         xml.tag! "g:id", product.id.to_s
         xml.tag! "g:price", product_price(product, {:format_as_currency => false})
         xml.tag! "g:condition", "new"
