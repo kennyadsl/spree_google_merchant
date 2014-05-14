@@ -27,7 +27,7 @@ xml.rss "version" => "2.0", "xmlns:g" => "http://base.google.com/ns/1.0" do
         xml.tag! "g:id", product.id.to_s
         xml.tag! "g:price", product_price(product, {:format_as_currency => false})
         xml.tag! "g:condition", "new"
-        xml.tag! "g:image_link", production_domain.sub(/\/$/, '') + product.images.first.attachment.url(:product) unless product.images.empty?
+        xml.tag! "g:image_link", production_domain.sub(/\/$/, '') + product.images.first.attachment.url(:original) unless product.images.empty?
         xml.tag! "g:brand", brand
       end
     end
