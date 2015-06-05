@@ -1,6 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_google_merchant'
+  s.author      = 'Nebulab'
   s.version     = '0.30.1'
   s.summary     = 'Add gem summary here'
   s.description = 'Add (optional) gem description here'
